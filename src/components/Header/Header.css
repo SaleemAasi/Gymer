@@ -1,0 +1,75 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+ /* Adjust background color */
+   padding: 10px 20px;
+   z-index: 1000; /* Ensure the header stays on top */
+ }
+ 
+ .logo {
+   width: 3rem;
+   height: auto;
+ }
+ 
+ .header-menu {
+   list-style: none;
+   display: flex;
+   gap: 2rem;
+   color: white;
+ }
+ 
+ .header-menu > li {
+   cursor: pointer;
+ }
+ 
+ .header-menu > li:hover {
+   color: var(--orange); /* Assuming you have an orange color variable */
+ }
+ 
+ .bars-icon {
+   display: flex;
+   cursor: pointer;
+ }
+ 
+ .header-menu.show {
+   display: block; /* Show the menu on mobile */
+   position: absolute;
+   top: 60px; /* Adjust if needed */
+   right: 0;
+   background-color: #333;
+   padding: 10px;
+   border-radius: 5px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .header-menu.show li {
+   padding: 10px 0;
+   text-align: center;
+ }
+ 
+ /* Hide the menu by default on mobile */
+ .header-menu {
+   display: flex;
+ }
+ 
+ @media (max-width: 768px) {
+   .header-menu {
+     display: none; /* Hide menu items on mobile */
+     flex-direction: column;
+     gap: 0;
+   }
+ 
+   .bars-icon {
+     display: block;
+   }
+ 
+   .header-menu.show {
+     display: block;
+   }
+ }
+ 
